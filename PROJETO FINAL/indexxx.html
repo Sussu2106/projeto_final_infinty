@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik+Mono+One&family=VT323&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!-- <style>
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    header {
+        background-color: black;
+        padding: 20px;
+        min-height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Exemplo de responsividade para telas menores */
+    @media (max-width: 768px) {
+        header {
+            min-height: 80px;
+            padding: 10px;
+        }
+    }
+
+    header>img {
+        max-width: 20%;
+        height: auto;
+    }
+
+    .industrias>h1,
+    .request-name,
+    .request-password,
+    .request-user,
+    #user {
+        text-align: center;
+        /* font-family: "Rubik Mono One", monospace; */
+        font-family: "VT323", monospace;
+        font-weight: 700;
+        font-size: 50px;
+        /* margin-bottom: 20px;
+        margin-top: 40px; */
+    }
+
+    #username,
+    #password,
+    #user {
+        background-color: rgb(115, 115, 115);
+        text-align: center;
+        font-family: "VT323", monospace;
+        font-size: 30px;
+        min-height: 35px;
+        min-width: 25%;
+        border-radius: 4px;
+
+    }
+
+    #userFields {
+        opacity: 0;
+        /* Começa transparente */
+        transition: opacity 2s ease;
+        /* Transição suave de 2 segundos */
+    }
+
+    #batman-info{
+        /* opacity: 0;
+        /* Começa transparente */
+        /* transition: opacity 2s ease;
+        Transição suave de 2 segundos */
+        color: rgb(248, 248, 138);
+        font-family: "Rubik Mono One", monospace;
+        font-weight: 100;
+        font-size: 25px;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+
+    .content,
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        /* flex-wrap: wrap; */
+        /* Permite que os itens se ajustem ao tamanho do conteúdo */
+    }
+
+    .paragrafo,
+    footer {
+        flex: 1;
+        margin-right: 20px;
+        text-align: justify;
+    }
+
+    .bat-wings {
+        flex: 1;
+        text-align: center;
+    }
+
+    .bat-wings img {
+        max-width: 100%;
+        padding-top: 10%;
+        height: 500px;
+        display: inline-block;
+    }
+
+    footer {
+        background-color: rgba(115, 115, 115, 0.339);
+        opacity: 0;
+        /* Começa transparente */
+        transition: opacity 2s ease;
+        /* Transição suave de 2 segundos */
+        color: rgb(248, 248, 138);
+        font-family: "Rubik Mono One", monospace;
+        font-weight: 100;
+        font-size: 25px;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+</style> -->
+
+<style>
+    header {
+        display: flex;
+        height: 100px;
+        padding: 20px 20px;
+        background-color: rgb(64, 64, 64);
+        position: relative;
+        align-items: center;
+    }
+
+    .menu-container {
+        position: relative;
+        top: 20px;
+        left: 20px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3%;
+        color: #808080;
+
+
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        /* padding-top: 2px; */
+        /* padding-bottom: 200%; */
+    }
+
+    .menu-toggle .bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        width: 300%;
+        height: 80px;
+        background-color: #808080;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+        padding-top: 25%;
+        padding-bottom: 10px;
+        margin: 12px 20px 10px 20px;
+
+    }
+
+
+    #navMenu {
+        left: 0;
+        width: 50%;
+        background-color: rgb(64, 64, 64);
+        font-family: "Rubik Mono One", monospace;
+        font-weight: lighter;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        padding-top: 12%;
+        box-shadow: none;
+
+
+    }
+
+
+    header>h1 {
+        color: rgb(192, 192, 192);
+        font-family: "Rubik Mono One", monospace;
+        font-weight: 100;
+        display: flex;
+        justify-content: center;
+        /* Alinha o conteúdo horizontalmente no centro */
+        align-items: center;
+        /* Alinha o conteúdo verticalmente no centro */
+        height: 20vh;
+        text-align: justify;
+        padding-left: 5%;
+
+    }
+
+    .login>a>img {
+        display: flex;
+        width: 70px;
+        height: 60px;
+    }
+
+    .logo {
+        display: flex;
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .slider {
+        position: relative;
+        width: 100%;
+        margin: auto;
+        overflow: hidden;
+        background-color: #333;
+        height: 100%;
+    }
+
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @keyframes slideAnimation {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .bat-banner {
+        font-family: "Rubik Mono One", monospace;
+
+        background-color: #333;
+        /* Cor de fundo do banner */
+        color: #ffffff;
+        /* Cor do texto */
+        text-align: center;
+        padding: 10px;
+        font-size: 1.2rem;
+        position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+        height: 50px;
+        padding-top: 30px;
+    }
+
+    .bat-banner p {
+        display: inline-block;
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    .infos {
+        display: flex;
+        align-items: center;
+        width: calc(100% * 4);
+        /* A largura total do conteúdo para permitir o loop contínuo */
+        animation: scrollBanner 40s linear infinite;
+    }
+
+    .infos p {
+        margin: 0;
+        padding: 0 40px;
+        /* Espaçamento entre as frases */
+        flex-shrink: 0;
+        /* Impede que os parágrafos encolham */
+        white-space: nowrap;
+        /* Garante que o texto não quebre */
+    }
+
+
+    @keyframes scrollBanner {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .bat-banner p {
+        margin: 0;
+        padding: 0 40px;
+        /* Aumenta o espaçamento entre as frases */
+        flex-shrink: 0;
+    }
+
+    /* BODY */
+    body {
+        background-color: #333;
+    }
+
+    /* FOOTER */
+    footer {
+        background-color: #333;
+        color: rgb(192, 192, 192);
+        font-family: "Rubik Mono One", monospace;
+        font-weight: 100;
+
+    }
+</style>
+<header>
+    <div class="menu-container">
+        <div class="menu-toggle" id="menuToggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="#equipamentos">Inventário de Equipamentos</a></li>
+                <li><a href="#veiculos">Veículos</a></li>
+                <li><a href="#seguranca">Dispositivos de Segurança</a></li>
+                <li><a href="#relatorios">Relatórios e Análises</a></li>
+                <li><a href="#configuracoes">Configurações</a></li>
+            </ul>
+        </nav>
+    </div>
+    <h1>Wayne
+        <div class="logo">
+            <img src="/imagens/round.png">
+        </div>
+        Industries
+    </h1>
+    <div class="login">
+        <a href="loginnn.html">
+
+            <img src="/imagens/person.png" alt="login">
+        </a>
+    </div>
+
+
+
+</header>
+
+<body>
+
+    <main>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="https://i.pinimg.com/originals/cc/16/a8/cc16a8abaa587004453323fc624a1264.jpg"
+                        alt="Batman city">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.wallpapersafari.com/5/81/sdxDbo.jpg" alt="Imagem 2">
+                </div>
+                <div class="slide">
+                    <img src="https://images2.alphacoders.com/133/1335948.jpg" alt="Imagem 3">
+                </div>
+                <div class="slide">
+                    <img src="https://www.pixel4k.com/wp-content/uploads/2024/01/the-batman-2-coming-super-heroes-4k-3840x2160_1704223928.jpg.webp"
+                        alt="Imagem 3">
+                </div>
+                <div class="slide">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgg_vzJxKX45L_hjheF0BWmZmdmweVOz3Q2fVsx-oQo-6jj55SM1tvfqYEmaCFKvsSbJboLacdqJ8T2J1M67nNPgwo0aS-Ur1RNJ9yjkZOnIRNP4b-rn3U73JODgHV3rrDGjscesK2Mjw3HrwzIz-l7E6CyhcvFH-ITEE14tKowCU5cZzpS0QxPXYEP7A/w1600/4k-batman-wallpaper-ai-generated.webp"
+                        alt="Imagem 4">
+                </div>
+                <div class="slide">
+                    <img src="https://wallpapersmug.com/download/1366x768/4a2ed3/batman-minimal-logo.jpg"
+                        alt="Imagem 5">
+                </div>
+            </div>
+        </div>
+        <div class="infos">
+            <div class="bat-banner">
+                <p>WAYNE INDUSTRIES</p>
+                <p>CONHEÇA A HISTÓRIA DO BATMAN</p>
+                <p>WAYNE INDUSTRIES</p>
+                <p>CONTRATE NOSSOS SERVIÇOS</p>
+                <p>WAYNE INDUSTRIES</p>
+                <p>PRODUTOS</p>
+                <!--duplicando-->
+                <p>WAYNE INDUSTRIES</p>
+                <p>CONHEÇA A HISTÓRIA DO BATMAN</p>
+                <p>WAYNE INDUSTRIES</p>
+                <p>CONTRATE NOSSOS SERVIÇOS</p>
+                <p>WAYNE INDUSTRIES</p>
+                <p>PRODUTOS</p>
+            </div>
+        </div>
+
+
+        <!-- 
+        <div class=" container">
+            <div class="industrias">
+                <h1>Instalações da Indústria Wayne</h1>
+            </div>
+
+        </div> -->
+
+
+        <!-- <div class="container">
+            <div class="request-user">
+                <form action="/submit-your-form-handler" method="post">
+                    <label for="request-user">Tipo de usuário:</label><br>
+                    <select id="user" name="user" onchange="toggleUserFields()">
+                        <option value="">Selecione:</option>
+                        <option value="funcionário">Funcionário</option>
+                        <option value="gerente">Gerente</option>
+                        <option value="administrador">Administrador</option>
+                        <option value="visitante">Visitante</option>
+                    </select>
+                </form><br>
+            </div>
+            <div class="container" id="userFields">
+                <div class="request-name">
+                    <form action="/submit-your-form-handler" method="post">
+                        <label for="username">Nome de Usuário:</label><br>
+                        <input type="text" id="username" name="username" required>
+                    </form>
+                </div>
+                <div class="request-password">
+                    <form action="/submit-your-form-handler" method="post">
+                        <label for="password">Senha:</label><br>
+                        <input type="text" id="password" name="password" required>
+                    </form>
+                </div>
+            </div> -->
+
+        <!-- </div> -->
+    </main>
+    <footer class="end-footer">
+        <small>Não fazemos aniversários, favor NÃO INSISTIR</small><br><br>
+
+        <p>Feito por Suelen Lanna&#169;</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

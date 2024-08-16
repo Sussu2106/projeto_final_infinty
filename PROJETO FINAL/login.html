@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik+Mono+One&family=VT323&display=swap"
+        rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<style>
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Rubik Mono One', monospace;
+        color: #808080;
+    }
+
+    header {
+        display: flex;
+        height: 100px;
+        padding: 20px;
+        background-color: #404040;
+        /* Fundo sólido para o header */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        /* Garante que o header fique sobre o conteúdo */
+        align-items: center;
+        color: rgb(192, 192, 192);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* Sombra para dar destaque */
+    }
+
+    header>h1 {
+        color: rgb(192, 192, 192);
+        font-family: "Rubik Mono One", monospace;
+        font-weight: 100;
+        display: flex;
+        justify-content: center;
+        /* Alinha o conteúdo horizontalmente no centro */
+        align-items: center;
+        height: 100%;
+        margin: 0;
+        /* Remove margem padrão */
+        padding-left: 35%;
+        /* Ajuste se necessário */
+        text-align: center;
+
+    }
+
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    /* Estilo dos elementos dentro da imagem de fundo */
+    .request-user,
+    .request-name,
+    .request-password {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #username,
+    #password,
+    #user {
+        background-color: rgb(115, 115, 115);
+        color: #fff;
+        text-align: center;
+        font-family: "Rubik Mono One", monospace;
+        font-size: 30px;
+        min-height: 35px;
+        min-width: 25%;
+        border-radius: 4px;
+    }
+
+    #userFields {
+        opacity: 0;
+        transition: opacity 2s ease;
+    }
+</style>
+
+<header>
+    <h1>Wayne
+        <div class="logo">
+            <img src="https://w0.peakpx.com/wallpaper/22/479/HD-wallpaper-batman-dark-thumbnail.jpg">
+        </div>
+        Industries
+    </h1>
+</header>
+
+<body>
+    <div class="fundo-principal">
+        <div class="classe-fundo">
+            <div class="imagem-fundo">
+                <img src="https://i.pinimg.com/originals/cc/16/a8/cc16a8abaa587004453323fc624a1264.jpg"
+                    alt="Batman city">
+            </div>
+            
+        </div>
+    </div>
+        <div class="request-user">
+            <form action="/submit-your-form-handler" method="post">
+                <label for="request-user">Tipo de usuário:</label><br>
+                <select id="user" name="user" onchange="toggleUserFields()">
+                    <option value="">Selecione:</option>
+                    <option value="funcionário">Funcionário</option>
+                    <option value="gerente">Gerente</option>
+                    <option value="administrador">Administrador</option>
+                    <option value="visitante">Visitante</option>
+                </select>
+            </form><br>
+        </div>
+        <div class="container" id="userFields">
+            <div class="request-name">
+                <form action="/submit-your-form-handler" method="post">
+                    <label for="username">Nome de Usuário:</label><br>
+                    <input type="text" id="username" name="username" required>
+                </form>
+            </div>
+            <div class="request-password">
+                <form action="/submit-your-form-handler" method="post">
+                    <label for="password">Senha:</label><br>
+                    <input type="text" id="password" name="password" required>
+                </form>
+            </div>
+        </div>
+
+   
+<script src="script.js"></script>
+</body>
+
+</html>

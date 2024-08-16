@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=VT323&display=swap" rel="stylesheet">
+    <title>Equipamentos Wayne</title>
+</head>
+<style>
+    body {
+    background-color: #6C6C6C;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: black;
+    padding: 20px;
+    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    /* Alinha o menu e o logo nas extremidades */
+    align-items: center;
+    position: relative;
+    /* Necessário para o posicionamento absoluto do menu */
+    z-index: 1000;
+    /* Garante que o cabeçalho e o menu estão acima de outros elementos */
+}
+ul {
+    list-style-type: none; /* Remove o marcador padrão */
+    padding-left: 0; /* Remove o recuo padrão */
+}
+
+ul li {
+    background: url('/imagens/wayne-list.png') no-repeat left center; /* Define a imagem como o marcador */
+    background-size: 50px 60px; /* Tamanho da imagem do marcador */
+    padding-left: 55px; /* Espaço suficiente para a imagem do marcador */
+    line-height: 30px; /* Alinha o texto com a imagem */
+}
+.gadgets{
+    display: inline-block;
+    padding: 10px;
+    font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+.gadgets > ul > img {
+    width: 450px;
+    height: 400px;
+    border-radius: 50%
+}
+</style>
+
+<body>
+    <main>
+        <div class="botoes"> 
+        <button>Gadgets</button>
+        <button>Veículos</button>
+    </div>
+    <div class="gadgets">
+        <h1>Gadgets</h1>
+        <ul>
+            <li> BAT-SINAL</li>
+            <img src="https://img.elo7.com.br/product/600x380/4C8E00D/luminaria-em-impressao-3d-inspirada-no-bat-sinal-luminaria.jpg">
+
+            <li> TRAJE E CAPA</li>
+            <img src="https://images.tcdn.com.br/img/img_prod/460977/action_figure_batman_armadura_batman_vs_superman_batman_suit_boneco_colecionavel_play_arts_kai_mkp_116801_1_eddc95a49b2b0fce0841f014bee733fb.jpg">
+
+            <li> BATARANGS</li>
+            <img src="https://i.pinimg.com/originals/de/36/43/de364327b54e235cb8679e7c7e1f4623.jpg">
+            <li> GRAPPLING-HOOK</li>
+            <li> BAT-SCANNER</li>
+            <li> BAT-SINAL</li>
+            <li> COMUNICADOR</li>
+            <li> BAT-CINTURÃO</li>
+            <li> DISPOSITIVOS DE VISÃO</li>
+            <li> EQUIPAMENTOS DE INTERROGATÓRIO</li>
+
+
+
+
+        </ul>
+
+    </div>
+        
+    </main>
+</body>
+</html>
