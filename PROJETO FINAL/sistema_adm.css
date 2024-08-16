@@ -1,9 +1,10 @@
+/*RESET*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+/*BODY*/
 body {
     font-family: "Rubik Mono One", monospace;
     font-weight: 500;
@@ -11,7 +12,7 @@ body {
     background-color: rgb(115, 115, 115);
     color: rgb(34, 34, 34);
 }
-
+/*HEADER*/
 header {
     background-color: #333;
     color: #b88702;
@@ -141,4 +142,58 @@ input[type="text"]{
 }
 button:placeholder{
     color:#9c9a9a
+}
+
+.dashboard-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.card {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+    background: #444; /* Fundo das cartas */
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5); /* Sombra mais intensa */
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #b88702; /* Cor clara para o título da carta */
+}
+
+.card .info p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #201f23; /* Cor cinza clara para o texto das cartas */
+}
+
+/* Estilos para categorias específicas */
+.security {
+    background: #444; /* Fundo mais escuro para segurança */
+}
+
+.resources {
+    background: #444; /* Fundo um pouco mais claro para recursos */
+}
+
+.activities {
+    background: #444; /* Fundo mais claro para atividades */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .dashboard-content {
+        flex-direction: column;
+    }
+
+    .card {
+        margin: 5px 0;
+    }
 }

@@ -192,12 +192,18 @@ header>.logo {
 }
 
 #userFields {
-
     opacity: 0;
-    /* Começa transparente */
-    transition: opacity 2s ease;
-    /* Transição suave de 2 segundos */
+    transition: opacity 0.5s ease;
 }
+
+#userFields.show {
+    opacity: 1;
+}
+
+#userFields.hide {
+    opacity: 0;
+}
+
 
 #batman-info {
 
