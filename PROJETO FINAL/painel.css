@@ -1,0 +1,85 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Fundo escuro para a página */
+}
+
+.dashboard {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #222; /* Fundo escuro para o painel de controle */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Sombra mais pronunciada */
+    color: white; /* Texto branco para contraste */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #f4f4f4; /* Cor clara para o cabeçalho */
+}
+
+header p {
+    font-size: 1.2em;
+    color: #aaa; /* Cor cinza clara para subtítulo */
+}
+
+.dashboard-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background: #444; /* Fundo das cartas */
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5); /* Sombra mais intensa */
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #f4f4f4; /* Cor clara para o título da carta */
+}
+
+.card .info p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #ccc; /* Cor cinza clara para o texto das cartas */
+}
+
+/* Estilos para categorias específicas */
+.security {
+    background: #444; /* Fundo mais escuro para segurança */
+}
+
+.resources {
+    background: #555; /* Fundo um pouco mais claro para recursos */
+}
+
+.activities {
+    background: #666; /* Fundo mais claro para atividades */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .dashboard-content {
+        flex-direction: column;
+    }
+
+    .card {
+        margin: 5px 0;
+    }
+}

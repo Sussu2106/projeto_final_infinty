@@ -1,0 +1,267 @@
+/* styles.css */
+
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: black;
+    padding: 20px;
+    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    /* Alinha o menu e o logo nas extremidades */
+    align-items: center;
+    position: relative;
+    /* Necessário para o posicionamento absoluto do menu */
+    z-index: 1000;
+    /* Garante que o cabeçalho e o menu estão acima de outros elementos */
+}
+
+/* Menu Hambúrguer e Navegação */
+.menu-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* Necessário para o posicionamento do menu */
+    padding-bottom: 200px;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+    height: 21px;
+    margin-right: 20px;
+    /* Espaçamento entre o menu e o logo */
+    z-index: 1100;
+    /* Garante que o botão está acima do menu */
+}
+
+.bar {
+    background-color: white;
+    height: 3px;
+    width: 30px;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Menu deslizante do lado direito */
+.nav-menu {
+
+    display: none;
+    /* Oculta o menu por padrão */
+    position: fixed;
+    /* Fica fixo na tela */
+    top: 0;
+    right: -250px;
+    /* Inicialmente fora da tela */
+    background-color: #333;
+    width: 250px;
+    /* Largura do menu */
+    height: 100%;
+    /* Altura completa da tela */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;
+    /* Transição suave */
+    box-sizing: border-box;
+    /* Inclui o padding na largura total */
+    z-index: 1000;
+    /* Garante que o menu está acima do conteúdo da página */
+}
+
+.nav-menu.open {
+    display: block;
+    /* Exibe o menu quando a classe open é adicionada */
+    left: 0;
+    /* Move o menu para dentro da tela */
+}
+
+.nav-menu ul {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* Exibe os itens em uma coluna */
+}
+
+.nav-menu ul li {
+    padding-top: 10px;
+    margin: 10px 0;
+}
+
+.nav-menu ul li a {
+    padding-top: 30px;
+
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    /* Faz com que o link ocupe toda a largura disponível */
+}
+
+.nav-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+.menu-toggle.open .bar:nth-child(1) {
+    transform: rotate(45deg);
+    transform-origin: left center;
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: left center;
+}
+
+/* Logo */
+header>.logo {
+    padding-right: 550px;
+    max-width: 20%;
+    height: auto;
+}
+
+/* Exemplo de responsividade para telas menores */
+@media (max-width: 768px) {
+    header {
+        min-height: 80px;
+        padding: 10px;
+    }
+
+    .menu-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle {
+        margin-right: 0;
+        margin-bottom: 10px;
+        /* Espaço entre o botão do menu e o logo */
+    }
+
+    .nav-menu {
+        width: 100%;
+        /* Ajusta a largura do menu para telas menores */
+    }
+
+    .logo {
+        max-width: 30%;
+        /* Ajuste do tamanho do logo para telas menores */
+    }
+}
+
+
+
+.industrias>h1,
+.request-name,
+.request-password,
+.request-user,
+#user {
+    text-align: center;
+    /* font-family: "Rubik Mono One", monospace; */
+    font-family: "VT323", monospace;
+    font-weight: 700;
+    font-size: 50px;
+    /* margin-bottom: 20px;
+    margin-top: 40px; */
+}
+
+#username,
+#password,
+#user {
+    background-color: rgb(115, 115, 115);
+    text-align: center;
+    font-family: "VT323", monospace;
+    font-size: 30px;
+    min-height: 35px;
+    min-width: 25%;
+    border-radius: 4px;
+
+}
+
+#userFields {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#userFields.show {
+    opacity: 1;
+}
+
+#userFields.hide {
+    opacity: 0;
+}
+
+
+#batman-info {
+
+    /* opacity: 0;
+    /* Começa transparente */
+    /* transition: opacity 2s ease;
+    Transição suave de 2 segundos */
+    /* display: none; */
+    color: rgb(248, 248, 138);
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 100;
+    font-size: 25px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.content,
+footer {
+    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    /* flex-wrap: wrap; */
+    /* Permite que os itens se ajustem ao tamanho do conteúdo */
+}
+
+.paragrafo{
+    display: none;
+    flex: 1;
+    margin-right: 20px;
+    text-align: justify;
+}
+
+.bat-wings {
+    flex: 1;
+    text-align: center;
+}
+
+.bat-wings img {
+    display: none;
+    max-width: 100%;
+    padding-top: 10%;
+    height: 500px;
+    display: inline-block;
+}
+
+footer {
+    display: none;
+
+    background-color: rgba(115, 115, 115, 0.339);
+    opacity: 0;
+    /* Começa transparente */
+    transition: opacity 2s ease;
+    /* Transição suave de 2 segundos */
+    color: rgb(248, 248, 138);
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 100;
+    font-size: 25px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
